@@ -19,7 +19,9 @@ jobs:
             args: >
                 -Dsonar.organization=christosservos
                 -Dsonar.projectKey=christosservos_Alamofire
-                -Dsonar.host.url=https://sonarcloud.iozz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: run
+        run: echo $SONAR_TOKEN
+        
