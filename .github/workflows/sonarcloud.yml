@@ -20,5 +20,5 @@ jobs:
                 -Dsonar.organization=christosservos
                 -Dsonar.projectKey=christosservos_Alamofire             
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
