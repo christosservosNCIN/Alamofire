@@ -19,7 +19,7 @@ jobs:
             args: >
                 -Dsonar.organization=christosservos
                 -Dsonar.projectKey=christosservos_Alamofire
-                -Dsonar.tests=Tests/
+ #               -Dsonar.tests=Tests/
 
         env:
       #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
