@@ -18,6 +18,7 @@ jobs:
         with:
             args: >
                 -Dsonar.organization=christosservos
+                
                 -Dsonar.projectKey=christosservos_Alamofire
  #               -Dsonar.tests=Tests/
 
