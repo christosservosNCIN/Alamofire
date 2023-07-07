@@ -18,7 +18,7 @@ jobs:
          # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: set envvar
         run: |
-          export PROJECTKEY="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')"
+          export PROJECTKEY="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> GITHUB_ENV
           echo $PROJECTKEY
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
@@ -31,3 +31,4 @@ jobs:
 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
