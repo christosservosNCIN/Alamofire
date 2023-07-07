@@ -26,10 +26,10 @@ jobs:
             args: >
                 -Dsonar.organization=christosservos
                    
-                -Dsonar.projectKey=${{ env.PROJECTKEY }}
+                -Dsonar.projectKey="${PROJECTKEY}"
  #               -Dsonar.tests=Tests/
 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          PROJECTKEY: ${{ env.PROJECTKEY }}
+          #PROJECTKEY: ${{ env.PROJECTKEY }}
 
