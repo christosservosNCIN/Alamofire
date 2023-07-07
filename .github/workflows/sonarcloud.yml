@@ -23,6 +23,7 @@ jobs:
       - name: ECHO PK
         run: |
           echo $PROJECTKEY
+          echo $PWD
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
