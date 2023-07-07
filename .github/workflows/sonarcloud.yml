@@ -27,4 +27,4 @@ jobs:
 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          PROJECTKEY: ${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
+          PROJECTKEY: "${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')"
