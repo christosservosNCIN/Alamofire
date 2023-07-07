@@ -22,7 +22,7 @@ jobs:
             args: >
                 -Dsonar.organization=christosservos
                    
-                -Dsonar.projectKey="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" 
+                -Dsonar.projectKey=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
  #               -Dsonar.tests=Tests/
 
         env:
