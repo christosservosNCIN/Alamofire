@@ -16,25 +16,23 @@ jobs:
         uses: actions/checkout@v3
       #  with:
          # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+         
       - name: EXPORT PK
         run: |
           echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
           
-      - name: ECHO PK
+      - name: ECHO PK -- troubleshooting step
         run: |
           echo $PROJECTKEY
           echo $PWD
+          
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=christosservos
-                   
+                -Dsonar.organization=christosservos                 
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
+                
  #               -Dsonar.tests=Tests/
-
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-         # PROJECTKEY: ${{ env.PROJECTKEY }}
-
-
