@@ -18,7 +18,7 @@ jobs:
          # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: EXPORT PK
         run: |
-          export PROJECTKEY="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> GITHUB_OUTPUT
+          export PROJECTKEY="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_OUTPUT
           
       - name: ECHO PK
         run: |
