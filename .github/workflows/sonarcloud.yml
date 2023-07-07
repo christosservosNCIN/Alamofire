@@ -22,9 +22,9 @@ jobs:
             args: >
                 -Dsonar.organization=christosservos
                    
-                -Dsonar.projectKey=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
+                -Dsonar.projectKey=$PROJECTKEY
  #               -Dsonar.tests=Tests/
 
         env:
-      #    GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          PROJECTKEY: ${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
