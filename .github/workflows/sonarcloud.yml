@@ -21,7 +21,7 @@ jobs:
           export PROJECTKEY="${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> GITHUB_ENV
           
       - name: ECHO PK
-          run:|
+        run: |
           echo $PROJECTKEY
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
