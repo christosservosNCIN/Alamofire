@@ -19,7 +19,7 @@ jobs:
            
       - name: EXPORT PK
         run: |
-          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
+          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo "REPOSITORY_NAME=${github.repository#*/}"" >> $GITHUB_ENV
           
       - name: ECHO PK -- troubleshooting step
         run: |
