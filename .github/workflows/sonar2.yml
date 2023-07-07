@@ -1,0 +1,38 @@
+name: sonarcloud
+on:
+  push:
+    branches:
+      - master
+      - main
+      - testMAIN
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout action
+        uses: actions/checkout@v3
+      #  with:
+         # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+           
+      - name: EXPORT PK
+        run: |
+          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
+          
+      - name: ECHO PK -- troubleshooting step
+        run: |
+          echo $PROJECTKEY
+          echo $PWD
+          
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        with:
+            args: >
+                -Dsonar.organization=christosservos                 
+                -Dsonar.projectKey=${{ github.repository_owner}}_${{ github.repository#*/ }}
+                
+ #               -Dsonar.tests=Tests/
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
