@@ -19,7 +19,7 @@ jobs:
            
       - name: EXPORT PK
         run: |
-          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
+          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo "REPOSITORY_NAME=${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
           
       - name: ECHO PK -- troubleshooting step
         run: |
@@ -31,7 +31,7 @@ jobs:
         with:
             args: >
                 -Dsonar.organization=christosservos                 
-                -Dsonar.projectKey=${{ github.repository_owner}}_${{ github.repository#*/ }}
+                -Dsonar.projectKey=${{ env.PROJECTKEY }}
                 
  #               -Dsonar.tests=Tests/
         env:
