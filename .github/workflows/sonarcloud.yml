@@ -35,6 +35,6 @@ jobs:
 
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          PROJECTKEY: ${{ env.PROJECTKEY }}
+         # PROJECTKEY: ${{ env.PROJECTKEY }}
 
 
