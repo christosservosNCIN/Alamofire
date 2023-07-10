@@ -23,8 +23,9 @@ jobs:
           
       - name: ECHO PK -- troubleshooting step
         run: |
-          echo $PROJECTKEY
+          echo ${{ env.PROJECTKEY }}
           echo $PWD
+          exit 1
           
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
