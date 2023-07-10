@@ -19,7 +19,7 @@ jobs:
            
       - name: EXPORT PK
         run: |
-          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
+          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')"
           
       - name: ECHO PK -- troubleshooting step
         run: |
