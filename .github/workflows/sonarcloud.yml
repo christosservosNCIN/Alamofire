@@ -28,7 +28,7 @@ jobs:
           echo ${{ env.PROJECTKEY2 }}
           exit 1
         env:
-            PROJECTKEY2: "PROJECTKEY2=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')"
+            PROJECTKEY2: "${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')"
           
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
