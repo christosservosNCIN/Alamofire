@@ -22,7 +22,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=christosservos                 
+                -Dsonar.organization=${{ github.repository_owner}}                 
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
                 
  #               -Dsonar.tests=Tests/                 #-Dsonar.projectKey=${{ env.PROJECTKEY }}
