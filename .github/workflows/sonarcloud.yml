@@ -12,31 +12,20 @@ jobs:
     name: sed_projectKey
     runs-on: ubuntu-latest
     steps:
+    
       - name: Checkout action
         uses: actions/checkout@v3
-      #  with:
-         # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-           
-    #  - name: EXPORT PK
-     #   run: |
-      #    echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
-          
-      - name: ECHO PK -- troubleshooting step
-        run: |
-          echo ${{ env.PROJECTKEY }}
-          echo $PWD
-          echo ${{ env.PROJECTKEY2 }}
-          exit 1
-        env:
-            PROJECTKEY2: ${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=christosservos                 
+                -Dsonar.organization=${{ github.repository_owner}}                 
                 -Dsonar.projectKey=${{ env.PROJECTKEY }}
                 
  #               -Dsonar.tests=Tests/
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          PROJECTKEY: ${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')
