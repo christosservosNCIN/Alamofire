@@ -1,4 +1,4 @@
-name: sonarcloud
+name: sed_projectKey
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
     types: [opened, synchronize, reopened]
 jobs:
   sonarcloud:
-    name: SonarCloud
+    name: sed_projectKey
     runs-on: ubuntu-latest
     steps:
       - name: Checkout action
