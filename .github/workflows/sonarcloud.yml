@@ -17,9 +17,9 @@ jobs:
       #  with:
          # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
            
-      - name: EXPORT PK
-        run: |
-          echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
+    #  - name: EXPORT PK
+     #   run: |
+      #    echo "PROJECTKEY=${{ github.repository_owner}}_$(echo ${{ github.repository }} | sed 's/.*\///')" >> $GITHUB_ENV
           
       - name: ECHO PK -- troubleshooting step
         run: |
