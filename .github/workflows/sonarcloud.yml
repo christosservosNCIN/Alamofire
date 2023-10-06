@@ -1,11 +1,11 @@
-name: sed_projectKey
+name: SonarWflow
 on:
   push:
   pull_request_target:
 
 jobs:
   sonarcloud:
-    name: sed_projectKey
+    name: SonarJob
     runs-on: ubuntu-latest
     steps:
     
