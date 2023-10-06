@@ -1,12 +1,8 @@
 name: sed_projectKey
 on:
   push:
-    branches:
-      - master
-      - main
-      - testMAIN
-  pull_request:
-    types: [opened, synchronize, reopened]
+  pull_request_target:
+
 jobs:
   sonarcloud:
     name: sed_projectKey
