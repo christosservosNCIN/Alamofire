@@ -15,7 +15,7 @@ jobs:
     - name: Count new lines of code
       run: |
         BASE_BRANCH=${{ github.base_ref }}
-        echo "base branch is : ${{ github.base_ref }}
+        echo "base branch is : ${{ github.base_ref }}"
         git fetch origin $BASE_BRANCH
         NEW_LINES_ADDED=$(git diff --shortstat origin/$BASE_BRANCH...HEAD | grep -oP "\d+ insertions" | grep -oP "\d+")
         echo "New lines added: $NEW_LINES_ADDED"
