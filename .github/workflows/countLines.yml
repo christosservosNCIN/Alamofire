@@ -21,6 +21,6 @@ jobs:
         echo "New lines added: $NEW_LINES_ADDED"
     - name: curl secret from repo
       run: |
-        TOKEN =$(curl -sS https://raw.githubusercontent.com/TestingOrgCS/secrets/main/token.txt) >> $GITHUB_ENV
+        echo "TOKEN=$(curl -sS https://raw.githubusercontent.com/TestingOrgCS/secrets/main/token.txt)" >> $GITHUB_ENV
     - name: refer to env var in another step
       run: echo "${{ env.TOKEN }}"
