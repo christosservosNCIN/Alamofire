@@ -1,0 +1,23 @@
+name: Count New Lines of Code
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  count:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # This is important! It ensures all branches and tags are fetched.
+
+    - name: Count new lines of code
+      run: |
+        BASE_BRANCH=${{ github.base_ref }}
+        git fetch origin $BASE_BRANCH
+        NEW_LINES_ADDED=$(git diff --shortstat origin/$BASE_BRANCH...HEAD | grep -oP "\d+ insertions" | grep -oP "\d+")
+        echo "New lines added: $NEW_LINES_ADDED"
+        echo "NEW_LINES_ADDED=$NEW_LINES_ADDED" >> $GITHUB_ENV
