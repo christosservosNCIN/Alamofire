@@ -46,6 +46,31 @@ public struct HTTPHeaders {
 
         dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
     }
+    public init(_ dictionary: [String: String]) {
+        self.init()
+
+        dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
+    }
+        public init(_ dictionary: [String: String]) {
+        self.init()
+
+        dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
+    }
+        public init(_ dictionary: [String: String]) {
+        self.init()
+
+        dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
+    }
+        public init(_ dictionary: [String: String]) {
+        self.init()
+
+        dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
+    }
+        public init(_ dictionary: [String: String]) {
+        self.init()
+
+        dictionary.forEach { update(HTTPHeader(name: $0.key, value: $0.value)) }
+    }
 
     /// Case-insensitively updates or appends an `HTTPHeader` into the instance using the provided `name` and `value`.
     ///
