@@ -367,6 +367,58 @@ public final class CompositeEventMonitor: EventMonitor {
         }
     }
 
+        public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           willPerformHTTPRedirection response: HTTPURLResponse,
+                           newRequest request: URLRequest) {
+        performEvent {
+            $0.urlSession(session,
+                          task: task,
+                          willPerformHTTPRedirection: response,
+                          newRequest: request)
+        }
+    }    public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           willPerformHTTPRedirection response: HTTPURLResponse,
+                           newRequest request: URLRequest) {
+        performEvent {
+            $0.urlSession(session,
+                          task: task,
+                          willPerformHTTPRedirection: response,
+                          newRequest: request)
+        }
+    }    public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           willPerformHTTPRedirection response: HTTPURLResponse,
+                           newRequest request: URLRequest) {
+        performEvent {
+            $0.urlSession(session,
+                          task: task,
+                          willPerformHTTPRedirection: response,
+                          newRequest: request)
+        }
+    }    public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           willPerformHTTPRedirection response: HTTPURLResponse,
+                           newRequest request: URLRequest) {
+        performEvent {
+            $0.urlSession(session,
+                          task: task,
+                          willPerformHTTPRedirection: response,
+                          newRequest: request)
+        }
+    }    public func urlSession(_ session: URLSession,
+                           task: URLSessionTask,
+                           willPerformHTTPRedirection response: HTTPURLResponse,
+                           newRequest request: URLRequest) {
+        performEvent {
+            $0.urlSession(session,
+                          task: task,
+                          willPerformHTTPRedirection: response,
+                          newRequest: request)
+        }
+    }
+
     public func urlSession(_ session: URLSession, task: URLSessionTask, didFinishCollecting metrics: URLSessionTaskMetrics) {
         performEvent { $0.urlSession(session, task: task, didFinishCollecting: metrics) }
     }
