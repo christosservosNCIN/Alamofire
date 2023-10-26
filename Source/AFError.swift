@@ -35,6 +35,17 @@ public enum AFError: Error {
         case bodyPartURLInvalid(url: URL)
         /// The filename of the `fileURL` provided has either an empty `lastPathComponent` or `pathExtension.
         case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+
+        case bodyPartFilenameInvalid(in: URL)
+
+        case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+        case bodyPartFilenameInvalid(in: URL)
+
         /// The file at the `fileURL` provided was not reachable.
         case bodyPartFileNotReachable(at: URL)
         /// Attempting to check the reachability of the `fileURL` provided threw an error.
