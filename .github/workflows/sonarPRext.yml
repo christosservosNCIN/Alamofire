@@ -55,8 +55,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=${{ github.repository_owner }}
-                -Dsonar.projectKey=${{ env.PROJECTKEY }}
+                -Dsonar.organization=christosservosNCIN
+                -Dsonar.projectKey=christosservosNCIN_Alamofire
                 -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
                 -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
                 -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
