@@ -31,8 +31,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@master
         with:
             args: >
-                -Dsonar.organization=${{ github.repository_owner }}
-                -Dsonar.projectKey=${{ env.PROJECTKEY }}
+                -Dsonar.organization=christosservosncin
+                -Dsonar.projectKey=christosservosNCIN_Alamofire
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
